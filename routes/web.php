@@ -7,26 +7,26 @@ use App\Http\Controllers\Dashboard\Company\CompanyMonitoringLearnerController;
 use App\Http\Controllers\Dashboard\Company\CompanyProfileController;
 use App\Http\Controllers\Dashboard\CompanyController;
 use App\Http\Controllers\Dashboard\Company\CompanyUserController;
-use App\Http\Controllers\Dashboard\Of\OfAccessRuleController;
-use App\Http\Controllers\Dashboard\Of\OfClassroomController;
-use App\Http\Controllers\Dashboard\Of\OfIntraTrainingController;
-use App\Http\Controllers\Dashboard\Of\OfMonitoringController;
-use App\Http\Controllers\Dashboard\Of\OfPackController;
-use App\Http\Controllers\Dashboard\Of\OfProfileController;
-use App\Http\Controllers\Dashboard\Of\OfPromotionController;
-use App\Http\Controllers\Dashboard\Of\OfQuizController;
-use App\Http\Controllers\Dashboard\Of\OfSessionController;
-use App\Http\Controllers\Dashboard\Of\OfSupportController;
-use App\Http\Controllers\Dashboard\Of\OfTrainerController;
-use App\Http\Controllers\Dashboard\Of\OfUserController;
-use App\Http\Controllers\Dashboard\OfHomeController;
+use App\Http\Controllers\Dashboard\Admin\AdminAccessRuleController;
+use App\Http\Controllers\Dashboard\Admin\AdminClassroomController;
+use App\Http\Controllers\Dashboard\Admin\AdminIntraTrainingController;
+use App\Http\Controllers\Dashboard\Admin\AdminMonitoringController;
+use App\Http\Controllers\Dashboard\Admin\AdminPackController;
+use App\Http\Controllers\Dashboard\Admin\AdminProfileController;
+use App\Http\Controllers\Dashboard\Admin\AdminPromotionController;
+use App\Http\Controllers\Dashboard\Admin\AdminQuizController;
+use App\Http\Controllers\Dashboard\Admin\AdminActorController;
+use App\Http\Controllers\Dashboard\Admin\AdminSupportController;
+use App\Http\Controllers\Dashboard\Admin\AdminTrainerController;
+use App\Http\Controllers\Dashboard\Admin\AdminUserController;
+use App\Http\Controllers\Dashboard\AdminHomeController;
 use App\Http\Controllers\Dashboard\Trainer\TrainerProfileController;
 use App\Http\Controllers\Dashboard\Trainer\TrainerSessionController;
 use App\Http\Controllers\Dashboard\TrainerController;
 use App\Http\Controllers\Front\FrontOfferController;
 use App\Http\Controllers\Dashboard\LearnerController;
-use App\Http\Controllers\Dashboard\Of\OfCourseController;
-use App\Http\Controllers\Dashboard\OfController;
+use App\Http\Controllers\Dashboard\Admin\AdminProjectController;
+use App\Http\Controllers\Dashboard\AdminController;
 use App\Http\Controllers\Dashboard\SuperAdminController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PartialController;
@@ -168,11 +168,11 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
         });
 
         Route::prefix('of')->middleware(['role:of'])->name('of.')->group(function () {
-            Route::get('/help', [OfController::class, 'help'])->name('help');
-            Route::get('/index', [OfHomeController::class, 'index'])->name('index');
+            Route::get('/help', [AdminController::class, 'help'])->name('help');
+            Route::get('/index', [AdminHomeController::class, 'index'])->name('index');
 
 
-            Route::controller(OfQuizController::class)->prefix('quizzes')->name('quizzes.')->group(function () {
+            Route::controller(AdminQuizController::class)->prefix('quizzes')->name('quizzes.')->group(function () {
 
                 Route::patch('toggle-version-status/{version}/{status}', 'toggle_version_status')->name('toggle-version-status');
 
@@ -207,14 +207,14 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
 
             });
 
-            Route::controller(OfProfileController::class)->prefix('profile')->name('profile.')->group(function () {
+            Route::controller(AdminProfileController::class)->prefix('profile')->name('profile.')->group(function () {
                 Route::get('edit', 'edit')->name('edit');
                 Route::patch('update', 'update')->name('update');
                 Route::patch('/upload_tampon', 'upload_tampon')->name('upload_tampon');
                 Route::patch('/upload_signature', 'upload_signature')->name('upload_signature');
             });
 
-            Route::controller(OfUserController::class)->prefix('users')->name('users.')->group(function () {
+            Route::controller(AdminUserController::class)->prefix('users')->name('users.')->group(function () {
                 Route::get('', 'index')->name('index');
                 Route::get('/create', 'create')->name('create');
                 Route::post('/store', 'store')->name('store');
@@ -224,7 +224,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
                 Route::get('reinvite/{user}', 'reinvite')->name('reinvite');
             });
 
-            Route::controller(OfPromotionController::class)->prefix('promotions')->name('promotions.')->group(function () {
+            Route::controller(AdminPromotionController::class)->prefix('promotions')->name('promotions.')->group(function () {
                 Route::get('', 'index')->name('index');
                 Route::get('create', 'create')->name('create');
                 Route::post('store', 'store')->name('store');
@@ -233,7 +233,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
                 Route::delete('destroy/{promotion}', 'destroy')->name('destroy');
             });
 
-            Route::controller(OfMonitoringController::class)->prefix('monitoring')->name('monitoring.')->group(function () {
+            Route::controller(AdminMonitoringController::class)->prefix('monitoring')->name('monitoring.')->group(function () {
                 Route::get('sessions', 'sessions')->name('sessions');
                 Route::get('sessions/{session}/details', 'session_details')->name('sessions.details');
                 Route::get('elearnings', 'elearnings')->name('elearnings');
@@ -250,7 +250,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
                 Route::get('blended/{blended_id}', 'blended')->name('blended');
             });
 
-            Route::controller(OfClassroomController::class)->prefix('classrooms')->name('classrooms.')->group(function () {
+            Route::controller(AdminClassroomController::class)->prefix('classrooms')->name('classrooms.')->group(function () {
                 Route::get('', 'index')->name('index');
                 Route::get('create', 'create')->name('create');
                 Route::post('store', 'store')->name('store');
@@ -259,26 +259,26 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
                 Route::delete('destroy/{classroom}', 'destroy')->name('destroy');
             });
 
-            Route::controller(OfAccessRuleController::class)->prefix('access-rules')->name('access-rules.')->group(function () {
+            Route::controller(AdminAccessRuleController::class)->prefix('access-rules')->name('access-rules.')->group(function () {
                 Route::post('store/{item_type}/{item_id}', 'store')->name('store');
                 Route::patch('update/{access_rule}', 'update')->name('update');
                 Route::delete('delete/{access_rule}', 'delete')->name('delete');
             });
 
-            Route::controller(OfIntraTrainingController::class)->prefix('intra-trainings')->name('intra-trainings.')->group(function () {
+            Route::controller(AdminIntraTrainingController::class)->prefix('intra-trainings')->name('intra-trainings.')->group(function () {
                 Route::post('store/{item_type}/{item_id}', 'store')->name('store');
                 Route::patch('update/{intra}', 'update')->name('update');
                 Route::delete('delete/{intra}', 'delete')->name('delete');
             });
 
-            Route::controller(OfSupportController::class)->prefix('supports')->name('supports.')->group(function () {
+            Route::controller(AdminSupportController::class)->prefix('supports')->name('supports.')->group(function () {
                 Route::post('store/{item_type}/{item_id}', 'store')->name('store');
                 Route::patch('update/{support}', 'update')->name('update');
                 Route::delete('delete/{support}', 'delete')->name('delete');
                 Route::any('upload_document/{item_id?}', 'upload_document')->name('upload_document');
             });
 
-            Route::controller(OfTrainerController::class)->prefix('trainers')->name('trainers.')->group(function () {
+            Route::controller(AdminTrainerController::class)->prefix('trainers')->name('trainers.')->group(function () {
                 Route::get('', 'index')->name('index');
                 Route::get('create', 'create')->name('create');
                 Route::post('store', 'store')->name('store');
@@ -288,7 +288,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
                 Route::any('/upload_signature', 'upload_signature')->name('upload_signature');
             });
 
-            Route::controller(OfCourseController::class)->prefix('courses')->name('courses.')->group(function () {
+            Route::controller(AdminProjectController::class)->prefix('courses')->name('courses.')->group(function () {
 
                 Route::patch('toggle-status/{course}/{status}', 'toggle_status')->name('toggle-status');
 
@@ -319,7 +319,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
             ];
 
             foreach ($pack_types as $type) {
-                Route::controller(OfPackController::class)->prefix($type)->name($type . '.')->group(function () {
+                Route::controller(AdminPackController::class)->prefix($type)->name($type . '.')->group(function () {
 
                     Route::patch('toggle-status/{pack}/{status}', 'toggle_status')->name('toggle-status');
 
@@ -348,7 +348,7 @@ Route::prefix('{locale}')->middleware('set_locale')->group(function () {
             }
 
 
-            Route::controller(OfSessionController::class)->prefix('sessions')->name('sessions.')->group(function () {
+            Route::controller(AdminActorController::class)->prefix('sessions')->name('sessions.')->group(function () {
 
                 Route::patch('toggle-status/{session}/{status}', 'toggle_status')->name('toggle-status');
 

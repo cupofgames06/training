@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Dashboard\Of\Traits\HasHelp;
+use App\Http\Controllers\Dashboard\Admin\Traits\HasHelp;
 use App\Models\Trainer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;

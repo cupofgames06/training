@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&display=swap');
+@import 'bootstrap/scss/bootstrap';
+
 // DataTables
 @import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
 @import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
@@ -34,9 +37,6 @@
 @import "front/footer";
 
 
-//quiz(view+editor)
-@import "quiz/quiz-tinymce";
-
 p {
     margin-bottom: 0;
 }
@@ -45,16 +45,12 @@ p {
     cursor: move;
 }
 
-.header {
-    background-color: $header-bg;
-}
-
 .sticky-footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba($footer-bg, 0.9);
+    background-color: rgba(#fff, 0.9);
 
     button[type=submit]{
         float:right;
@@ -101,6 +97,7 @@ p {
     color: $primary;
     border-radius: 5px;
 }
+
 .card{
     border-radius: 12px;
 }

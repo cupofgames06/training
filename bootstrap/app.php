@@ -18,12 +18,6 @@ $app = new Illuminate\Foundation\Application(
 );
 
 
-//chargement env spécifique au site/domain e ncours
-if (!empty($_SERVER['SERVER_NAME'])) {
-    $host = strtolower($_SERVER['SERVER_NAME']);
-    $app->loadEnvironmentFrom('env/.' . $host);
-}
-
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
