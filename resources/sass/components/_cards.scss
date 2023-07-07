@@ -1,0 +1,51 @@
+.card {
+
+    border: none;
+    background-color: $card-bg;
+
+    .card-header {
+        border: none;
+        border-bottom: 1px solid $body-bg;
+        background: white;
+        padding: 16px 24px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 26px;
+        color: $dark;
+
+        .icon {
+            margin-right: 4px
+        }
+    }
+
+    .card-body {
+        padding: 24px;
+    }
+
+    .card-footer {
+
+        border: none;
+        border-top: 1px solid $body-bg;
+        background: white;
+        padding: 16px 24px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 26px;
+        color: $dark;
+
+        .btn-cancel {
+
+            margin-right: 12px;
+            border: 2px solid rgba($text-muted, .1);
+            color:$gray-100;
+
+            &:hover{
+                border: 2px solid  $text-muted;
+                background-color: $text-muted;
+                color:$white;
+            }
+
+        }
+    }
+
+}

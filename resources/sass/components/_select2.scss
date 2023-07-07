@@ -1,0 +1,182 @@
+.select2-container {
+    //width: 100% !important;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    .select2-selection {
+
+        border: 2px solid #EAECF5 !important;
+        border-radius: 8px !important;
+        padding: 12px 16px;
+        min-height: 52px;
+
+        &--single {
+            .select2-selection__rendered {
+                padding-right: 0 !important;
+            }
+        }
+
+        &__choice {
+            border: none !important;
+            padding: 5px 5px 5px 20px !important;
+            background-color: $primary !important;
+            color: $white;
+            margin-top: -4px !important;
+
+            &__remove {
+                color: $white !important;
+                padding: 4px !important;
+                border: none !important;
+
+                &:hover {
+                    background-color: $primary !important;
+                    color: $text-muted !important;
+                }
+            }
+
+        }
+
+        &__placeholder {
+            color: $text-muted !important;
+        }
+
+        &__arrow {
+            height: 54px !important;
+        }
+
+        &.select2-sm {
+            border: none !important;
+            line-height: 16px !important;
+            padding: 0px !important;
+            height: 18px !important;
+            font-size: 12px !important;
+            min-height: 0 !important;
+
+            .select2-selection__arrow {
+                display: none !important;
+            }
+
+            .select2-selection__rendered {
+                line-height: 16px !important;
+                color: $text-muted !important;
+
+                &::after {
+                    line-height: 18px !important;
+                }
+            }
+        }
+
+    }
+
+    .select2-dropdown {
+        border: none;
+        box-shadow: 0 12px 50px -4px rgba(38, 49, 84, 0.07);
+        border-radius: 12px;
+        margin-top: 8px;
+        padding: 20px;
+
+        &.select2-sm {
+            padding: 4px;
+        }
+
+        .select2-search__field {
+            border: 1px solid #EAECF5 !important;
+            border-radius: 4px !important;
+            padding: 8px !important;
+            margin-bottom: 8px !important;
+        }
+
+
+
+        .select2-results {
+            &__options {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            &__option {
+                padding: 12px !important;
+                border-radius: 8px !important;
+                user-select: none;
+                -webkit-user-select: none;
+                font-size: 14px;
+                margin-bottom: 6px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgb($primary, .5) !important;
+                    color: $white !important;
+
+                }
+
+                &--highlighted {
+                    background-color: $primary !important;
+                }
+
+                &--selectable {
+                    cursor: pointer;
+                }
+            }
+
+        }
+
+        &.select2-sm {
+
+            .select2-results {
+
+                &__option {
+                    padding: 4px 8px;
+                    border-radius: 8px;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    margin-bottom: 3px;
+
+                }
+            }
+        }
+    }
+}
+
+.select2-selection__arrow {
+    display: none;
+}
+
+/* Ajouter l'icône de Font Awesome */
+.select2-selection__rendered::after {
+    float: right;
+    content: '\f107'; /* Code de l'icône Font Awesome à afficher */
+    font-family: "Font Awesome 6 Pro"; /* Font Family de Font Awesome */
+    font-weight: 900; /* Poids de la police */
+    margin-left: 5px; /* Espacement entre l'icône et le texte */
+    line-height: 28px;
+}
+
+.select2-container--default {
+    &.select2-container--focus {
+        .select2-selection--multiple {
+            border: 1px solid #EAECF5 !important;
+        }
+    }
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-left:0px!important;
+}
+
+.select2-container--open .select2-selection__rendered::after {
+    transform: rotate(180deg);
+}
+
+.select2-container--default .select2-selection--multiple {
+    padding-bottom: 12px !important;
+    padding-right: 16px !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    /*margin-top: 0px !important;*/
+    /*margin-bottom: 4px !important;*/
+}

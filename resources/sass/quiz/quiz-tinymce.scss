@@ -1,0 +1,22 @@
+.tiny-mce {
+
+    &-text {
+        background-color: #FFF;
+        color: #444;
+        padding: 8px;
+    }
+
+    &-quote {
+        background-color: $secondary-light;
+        color: $dark;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+        padding: 32px 113px;
+        min-height: 100% !important;
+    }
+
+}
+
+
+

@@ -1,0 +1,12 @@
+.overview{
+    .title{
+        line-height: 1; font-size: 16px; font-weight: 600;
+    }
+    .label{
+        font-size: 14px; font-weight: 600; margin-top: .25rem; color: tint-color($dark,20%);
+    }
+    .sep
+    {
+        border-left: 1px solid tint-color($text-muted,80%);height: 8px;left: 100%; margin-right: .2rem;margin-left: .2rem;
+    }
+}

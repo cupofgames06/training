@@ -1,0 +1,44 @@
+.daterangepicker {
+    font-family: 'Hanken Grotesk' !important;
+    padding: 20px !important;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+    direction: ltr;
+    box-shadow: 0 12px 50px -4px rgba(38, 49, 84, 0.07);
+    border: none !important;
+}
+
+
+.daterangepicker .drp-buttons .cancelBtn {
+    border: 1px solid $text-muted;
+    padding-top:15px;
+}
+
+.daterangepicker .drp-buttons {
+    border-top: 1px solid $body-bg !important;
+    padding-top:15px!important;
+}
+
+.daterangepicker .drp-buttons .btn {
+    margin-left: 15px !important;
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    padding: 5px 15px !important;
+
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: $primary !important;
+    color: $white;
+}
+
+.daterangepicker td.in-range {
+    background-color: rgba($primary, .05) !important;
+}
+
+.daterangepicker td.start-date,
+.daterangepicker td.end-date {
+    background-color: $primary !important;
+    color: $white !important;
+}

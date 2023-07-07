@@ -1,0 +1,51 @@
+.border-muted{
+    border: 1px solid tint-color($text-muted, 80%) !important;
+}
+.bg-primary-100{
+    background-color: tint-color($primary, 80%);
+}
+.bg-primary-200{
+    background-color: tint-color($primary, 60%);
+}
+.bg-primary-300{
+    background-color: tint-color($primary, 40%);
+}
+.bg-primary-400{
+    background-color: tint-color($primary, 20%);
+}
+.bg-primary-500{
+    background-color: $primary;
+}
+.bg-primary-600{
+    background-color: shade-color($primary, 20%);
+}
+.bg-primary-700{
+    background-color: shade-color($primary, 40%);
+}
+.bg-primary-800{
+    background-color: shade-color($primary, 60%);
+}
+.bg-primary-900{
+    background-color: shade-color($primary, 80%);
+}
+.bg-opacity-1{
+    background-color: rgba($white,.1) !important;
+}
+
+#search-input > span{
+    border-right: none;
+}
+#search-input > input{
+    border-left: none;
+}
+$colors:(
+    primary: $primary,
+    primary-100: tint-color($primary, 80%),
+    primary-300: tint-color($primary, 40%)
+);
+
+:root {
+    @each $name, $color in $colors {
+        --color-#{$name}: #{$color};
+    }
+}

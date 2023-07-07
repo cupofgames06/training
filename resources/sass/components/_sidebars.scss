@@ -1,0 +1,131 @@
+.sidebar {
+    width: 64px;
+    position: fixed;
+    top: 4.8rem;
+    left: 0;
+    padding: 12px 0px;
+    height: 90vh;
+    background-color: white;
+    transition: opacity 0.3s;
+
+    .collapse,  .collapsing {
+
+        ul {
+            list-style: none;
+            li {
+
+                margin: 0 12px;
+                a,button{
+                    padding-left: 40px;
+                }
+            }
+        }
+
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            padding: 0;
+            margin: 3px 12px;
+
+            a,button {
+
+                text-decoration: none;
+                color: $text-muted;
+                display: flex;
+                padding: 0;
+                line-height: 40px;
+
+                &.active {
+                    background-color: rgba($primary, 0.15);
+                    border-color: transparent;
+                    color: $primary !important;
+                }
+
+                &:hover {
+
+                    font-weight: 600;
+                    background-color: rgba($primary, 0.15);
+                    border-color: transparent;
+                    color: $primary !important;
+
+                }
+
+                .icon {
+                    font-weight: 600 !important;
+                    width: 40px;
+                    height: 40px;
+                }
+
+            }
+
+            button {
+                text-decoration: none;
+                color: $text-muted;
+                display: flex;
+                align-items: center;
+
+                .icon {
+
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+       display: none;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .toggle-children {
+        display: none;
+    }
+
+    &.show-titles .title {
+        display: flex;
+        justify-content: space-between;
+        flex: auto;
+        margin-left: 2px;
+    }
+
+    &.show-titles .toggle-children {
+        display: block;
+        margin-right: 12px;
+    }
+
+    &-open {
+        width: 272px;
+        position: relative;
+        top: 0;
+        height: 97.5%;
+        margin-top: 5px;
+        z-index: 2000;
+        @include media-breakpoint-down(md) {
+            display: block;
+            z-index: 2000;
+            position: absolute;
+            height: auto;
+            top: auto;
+        }
+
+    }
+
+    &-hover {
+        width: 272px;
+        z-index: 2000;
+
+        ul {
+            li {
+                width: 250px;
+            }
+        }
+    }
+
+}

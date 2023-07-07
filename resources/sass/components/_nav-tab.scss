@@ -1,0 +1,25 @@
+.nav-tabs {
+    border: none;
+
+    .nav-item {
+        .nav-link {
+            border: none;
+            font-size: 18px;
+            line-height: 26px;
+            color: $body-color;
+            font-weight: 600;
+            &:hover {
+                border-bottom: 2px solid $bg-light;
+            }
+        }
+
+        .nav-link.active {
+            padding: var(--bs-nav-link-padding-y) 0;
+            margin: 0 var(--bs-nav-link-padding-x);
+            border-bottom: 2px solid $primary;
+            color: $gray-100;
+
+        }
+    }
+}
+

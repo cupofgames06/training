@@ -1,0 +1,106 @@
+// DataTables
+@import "datatables.net-bs5/css/dataTables.bootstrap5.min.css";
+@import "datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css";
+@import 'datatables.net-select-bs5/css/select.bootstrap5.css';
+
+//Loader Css
+@import "loaders.css";
+
+// components
+@import "components/separator";
+@import "components/button";
+@import "components/utilities";
+@import "components/forms";
+@import "components/breadcrumbs";
+@import "components/sidebars";
+@import "components/pagination";
+@import "components/select2";
+@import "components/datatable";
+@import "components/tinyMce";
+@import "components/datepicker";
+@import "components/daterangepicker";
+@import "components/sweetalert2";
+@import "components/form-select";
+@import "components/nav-tab";
+@import "components/cards";
+@import "components/quiz-editor";
+@import "components/loader";
+@import "components/indicator";
+@import "components/overview";
+@import "components/apex-chart";
+
+//front
+@import "front/offer";
+@import "front/footer";
+
+
+//quiz(view+editor)
+@import "quiz/quiz-tinymce";
+
+p {
+    margin-bottom: 0;
+}
+
+.draggable {
+    cursor: move;
+}
+
+.header {
+    background-color: $header-bg;
+}
+
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba($footer-bg, 0.9);
+
+    button[type=submit]{
+        float:right;
+    }
+}
+
+.navbar-brand{
+    margin-left: 7rem;
+    @media (max-width: 768px) {
+        margin-left: 4rem;
+    }
+}
+.content-custom {
+    margin-left: 7rem;
+    @media (max-width: 768px) {
+        margin-left: 0;
+        padding-left :24px;
+    }
+    padding-bottom :24px;
+    padding-right: 24px;
+    padding-top: 24px;
+
+    &.show-sidebar {
+        margin-left: 1rem;
+    }
+}
+
+
+
+.quantity {
+    font-size: 12px;
+    padding: 3px 8px;
+    margin: 0;
+    margin-left: 8px;
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+    border-radius: 50%;
+}
+
+.tag {
+    font-size: 14px;
+    padding: 3px 8px;
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+    border-radius: 5px;
+}
+.card{
+    border-radius: 12px;
+}

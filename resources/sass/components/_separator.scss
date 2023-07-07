@@ -1,0 +1,76 @@
+.hr-text {
+    line-height: 24px; position: relative; outline: 0; border: 0; color: $text-muted; text-align: center; height: 1.5em; font-size: 16px;
+    &:before {
+        content: ''; background: $text-muted; position: absolute; left: 0; top: 50%; width: 100%; height: 0.5px;opacity: .5;
+    }
+    &:after {
+        content: attr(data-content); position: relative; display: inline-block; color: $dark; padding: 0 .5em; line-height: 1.5em; background-color: #fcfcfa;opacity: 1;
+    }
+}
+
+//
+// Separator
+//
+
+.separator {
+    display: block;
+    height: 0;
+    border-bottom: 1px solid $border-color;
+
+    &.separator-dotted {
+        border-bottom-style: dotted;
+        border-bottom-color: $border-dashed-color;
+    }
+
+    &.separator-dashed {
+        border-bottom-style: dashed;
+        border-bottom-color: $border-dashed-color;
+    }
+
+    &.separator-content {
+        display: flex;
+        align-items: center;
+        border-bottom: 0;
+        text-align: center;
+
+        &::before,
+        &::after {
+            content: " ";
+            width: 50%;
+            border-bottom: 1px solid $border-color;
+        }
+
+        &::before{
+            margin-right: 1.25rem;
+        }
+
+        &::after{
+            margin-left: 1.25rem;
+        }
+
+        &.separator-dotted {
+            &::before,
+            &::after {
+                border-bottom-style: dotted;
+                border-bottom-color: $border-dashed-color;
+            }
+        }
+
+        &.separator-dashed {
+            &::before,
+            &::after {
+                border-bottom-style: dashed;
+                border-bottom-color: $border-dashed-color;
+            }
+        }
+
+        @each $color, $value in $theme-colors {
+            &.border-#{$color}{
+                &::before,
+                &::after {
+                    border-color: $value !important;
+                }
+            }
+        }
+    }
+}

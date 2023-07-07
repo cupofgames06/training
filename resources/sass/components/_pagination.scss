@@ -1,0 +1,35 @@
+.pagination{
+    --bs-pagination-border-width: 0px;
+    justify-content: center !important;
+    margin-top: 12px!important;
+    & li {
+        & a, & a:focus {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:none !important;
+            border: none!important;
+        }
+
+    }
+}
+
+.page-link{
+    background: none;
+    border: none!important;
+    box-shadow: none!important;
+    color: $dark;
+
+}
+.page-link:hover{
+    color: $primary;
+}
+
+.page-link.active, .active > .page-link, .active > .page-link:focus{
+    background-color: rgba($primary, .03)!important;
+    border: none!important;
+    color: $primary;
+}

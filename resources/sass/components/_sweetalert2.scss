@@ -1,0 +1,30 @@
+.swal2-icon {
+    font-size: .45rem !important;
+
+    &.swal2-error {
+        //color: $white;
+       // border-color: $white !important;
+    }
+
+    &.swal2-error [class^=swal2-x-mark-line] {
+        //background-color: $white !important;
+    }
+}
+
+.swal2-title {
+    font-size: 1.2rem !important;
+    //color: $white;
+}
+
+.swal2-popup {
+    width: 20em;
+
+    /*&.swal2-icon-error {
+        background-color: $success;
+    }*/
+
+    &.swal2-icon-error {
+        //background-color: $danger;
+    }
+
+}

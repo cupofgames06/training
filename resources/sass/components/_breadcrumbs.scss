@@ -1,0 +1,21 @@
+.breadcrumb {
+    margin-bottom: 12px;
+    color: $text-muted!important;
+    font-size: 16px;
+    line-height: 24px;
+
+    .breadcrumb-item {
+        color: $text-muted;
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+        font-family: var(--fa-style-family, "Font Awesome 6 Pro");
+        font-weight: 600;
+        font-size: 14px;
+        color: $text-muted;
+        content: "\f054";
+    }
+}

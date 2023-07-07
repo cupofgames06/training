@@ -1,0 +1,93 @@
+
+.btn {
+    font-weight: 600;
+    padding: 10px 32px;
+
+    &:first-letter {
+        text-transform: uppercase;
+    }
+
+    &lg {
+        padding: 12px 40px;
+    }
+
+    &-round {
+        padding: 0;
+        margin: 0;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+    }
+}
+
+.btn-light-secondary {
+    font-weight: 600;
+    background-color: rgba($secondary, 0.25);
+    color: $secondary;
+    border-radius: .5rem;
+}
+
+.btn-light-secondary:hover, .btn-light-secondary:active, .btn-light-secondary:focus {
+    color: $white;
+    background-color: $secondary;
+}
+
+.btn-secondary {
+    font-weight: 600;
+    color: $white;
+    background-color: $secondary;
+}
+
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus {
+    color: $secondary;
+    background-color: rgba($secondary, 0.25);
+    border-color: transparent;
+}
+
+.btn-google {
+    font-weight: 600;
+    background-color: $white;
+    color: $dark;
+    border-radius: .5rem;
+    border-color: $text-muted;
+}
+
+.btn-google:hover, .btn-google:active, .btn-google:focus {
+    background-color: $light;
+    border-color: $text-muted;
+}
+
+.btn-toggle-menu {
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    margin-left: 28px;
+
+    &:hover, &:focus {
+        background-color: rgba($primary, 0.15);
+        border-color: transparent;
+        color: $primary !important;
+    }
+}
+
+.btn-outline-gray {
+    background-color: $white;
+    color: $dark;
+    border-radius: .5rem;
+    border-color: $gray-200;
+}
+
+.btn-outline-gray:hover, {
+    background-color: $gray-400;
+    color: $dark;
+    border-radius: .5rem;
+    border-color: $gray-400;
+}
+
+.btn-outline-light {
+    border-color: $gray-200;
+}
+
